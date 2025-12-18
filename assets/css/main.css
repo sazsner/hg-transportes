@@ -26,9 +26,9 @@
   color: var(--lightest-slate);
 }
 
-body {
+/* body {
   background-color: black;
-}
+} */
 
 .main {
   margin-top: -69px;
@@ -671,10 +671,19 @@ body {
   margin-left: 0.75rem;
 }
 
-.bg-contact {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px), url(../img/contact-image-truck.jpg);
+/* .bg-contact {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px), url(/assets/img/cargo-compass.png);
   background-size: cover;
   background-position: 70%;
+} */
+
+.bg-contact {
+  /* min-height: 400px; */
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px),
+    url("../img/bvl.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /*# sourceMappingURL=main.css.map */
