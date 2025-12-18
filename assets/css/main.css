@@ -14,7 +14,7 @@
   background-color: yellow;
 }
 
-* {
+/* * {
   box-sizing: content-box;
   margin: 0;
   padding: 0;
@@ -24,11 +24,24 @@
   font-weight: 500;
   line-height: 20px;
   color: var(--lightest-slate);
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* body {
-  background-color: black;
-} */
+body {
+  /* background-color: black; */
+  margin: 0;
+  font-family: "Raleway-Regular400", "Avenir", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  color: var(--lightest-slate);
+}
 
 .main {
   margin-top: -69px;
@@ -683,7 +696,7 @@
     linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px),
     url("../img/bvl.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 /*# sourceMappingURL=main.css.map */
