@@ -1,14 +1,19 @@
-//Get the button
-let mybutton = document.getElementById("mybutton");
+//Get the button and about section
+const buttonUp = document.getElementById("buttonUp");
+const aboutSection = document.getElementById("about");
 
-// When the user scrolls down 500px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-mybutton.addEventListener("click", topFunction);
+window.addEventListener("scroll", scrollFunction);
+buttonUp.addEventListener("click", topFunction);
+
+// function scroll button
 function scrollFunction() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    mybutton.style.display = "block";
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (scrollTop >= aboutSection.offsetTop) {
+    buttonUp.classList.remove("hidden");
   } else {
-    mybutton.style.display = "none";
+    buttonUp.classList.add("hidden");
   }
 }
 
