@@ -130,12 +130,14 @@ body {
 .centrado{
     height: 100vh;
     width: 100%;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--dark-oil);
-    z-index: 111;
+    z-index: 9999;
 }
 .lds-hourglass {
     display: inline-block;

@@ -1,9 +1,6 @@
+document.body.classList.add("loading");
 
-/* PRE LOADER */
-const loader = document.getElementById('loader');
-// const hidden = document.getElementById('hidden');
-
-window.addEventListener('load', function vanish(){
+window.addEventListener('load', function () {
   loader.classList.add("disppear");
-  // hidden.classList.remove("hidden")
+  document.body.classList.remove("loading");
 });
