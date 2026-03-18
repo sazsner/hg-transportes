@@ -188,7 +188,7 @@ body {
 .nav-pc {
   background-color: transparent;
   position: relative;
-  transition: ease 1s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   /* z-index: 3; */
 }
 .nav-pc .navy-flex {
@@ -213,6 +213,17 @@ body {
   font-weight: bold;
 }
 
+/* Navbar sticky desde ABOUT */
+.show-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .ham {
   display: none;
   cursor: pointer;
@@ -232,46 +243,15 @@ body {
 
 .slate-bb {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-
-/* .show-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-
-  opacity: 1;
-  transition: opacity 0.3s ease;
-} */
-
-
-
-/* Navbar normal (HOME) */
-.nav-pc {
-  position: relative;
-  background-color: transparent;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Navbar sticky desde ABOUT */
-.show-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-
-  transform: translateY(0);
-}
-
-
-
-
-
+};
 
 /* ---------- */
 
 /* Nav Responsive */
+body.menu-open {
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .lang {
     display: none;
@@ -300,6 +280,28 @@ body {
   }
 
   .nav-links {
+  background-color: var(--lightest-slate);
+  position: absolute;
+
+  top: 69px;
+  left: 0;
+  width: 40%; /* puedes ajustar */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 180px;
+  padding: 20px 0;
+
+  transform: translateX(-100%);
+  opacity: 0;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+  /* .nav-links {
     background-color: var(--lightest-slate);
     position: absolute;
     display: none !important;
@@ -314,7 +316,7 @@ body {
     width: 54%;
     opacity: 0;
     border-bottom: 0.1rem solid var(--lightest-slate);
-  }
+  } */
   .nav-links a {
     color: var(--oil) !important;
   }
@@ -328,8 +330,8 @@ body {
   }
 }
 .nav-links.activate {
-  display: flex !important;
-  animation: showMenu 350ms ease-in-out both;
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .br-1.animado {
