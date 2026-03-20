@@ -14,8 +14,9 @@
   src: url("/assets/fonts/RespondentBlack.otf");
 }
 
-/* Variable Colors*/
+/* Variable Colors #091018 color oscuro nav */
 :root {
+  --dark: #091018;
   --dark-oil: #192430;
   --oil: #192430;
   --lightest-oil: #2c3e50;
@@ -25,6 +26,7 @@
   --green: #1da058;
   --blue-dark: #090f1b;
   --bright-turquoise: #32e6e2;
+  --text-title-shadow: 2px 2px 4px #000000;
 }
 
 /* All */
@@ -47,7 +49,8 @@ html {
 }
 
 .main {
-  margin-top: -69px;
+  margin-top: -68px;
+  z-index: -1;
 }
 
 .scrollReveal {
@@ -99,7 +102,7 @@ html {
   background-color: var(--oil);
 }
 
-.bg-lightest-slate {
+header .bg-lightest-slate {
   background-color: var(--lightest-slate);
 }
 
@@ -109,6 +112,10 @@ html {
 
 .bs-inset {
   box-shadow: 0px 9px 9px 2px rgba(0, 0, 0, 0.329) inset;
+}
+
+.slate-bb {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* ---------- */
@@ -178,23 +185,9 @@ html {
 
 /* Navbar */
 .nav-pc {
-  height: 4.25rem;
-  background-color: var(--oil);
-  /* position: relative; */
-  /* transition: background-color 0.3s ease, transform 0.3s ease; */
-  /* z-index: 9999; */
-}
-
-.nav-pc .navy-flex {
-  /*   display: flex;
-  align-items: center;
-  justify-content: space-between; */
-  /* min-height: 68px; */
-}
-
-.nav-pc .nav-links {
-  /* display: flex; */
-  /* padding: 0; */
+  height: 68px;
+  background-color: var(--dark);
+  z-index: 2;
 }
 
 .nav-pc .nav-links li {
@@ -210,9 +203,7 @@ html {
 }
 
 .logo {
-  /* margin: 10px; */
   text-decoration: none;
-  /* color: inherit; */
 }
 
 /* Navbar sticky desde ABOUT */
@@ -222,13 +213,10 @@ html {
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  /* transform: translateY(0); */
-  /* opacity: 1; */
 }
 
-.slate-bb {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
+
+
 /* Hamburguer mobile */
 .ham {
   display: none;
@@ -281,13 +269,19 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
-  .nav-pc .hg-title {
-    font-size: 23px;
-    /* text-decoration: none; */
+  .main {
+    margin-top: -60px;
+    z-index: -1;
   }
 
-  .lang {
-    display: none;
+  .nav-pc {
+    height: 60px;
+  }
+
+  .nav-pc .hg-title {
+    font-size: 1.5rem;
+    text-shadow: 0px 1px 1px #000000;
+    /* text-decoration: none; */
   }
 
   .hide-name {
@@ -307,7 +301,7 @@ body.menu-open {
     background-color: var(--lightest-slate);
     position: absolute;
 
-    top: 69px;
+    top: 60px;
     left: 0;
     width: 40%;
     /* puedes ajustar */
@@ -424,7 +418,7 @@ body.menu-open {
   font-weight: 900;
   font-size: 73px;
   color: rgb(233, 234, 235);
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: var(--text-title-shadow);
   color: var(--lightest-slate);
 }
 
