@@ -3,10 +3,12 @@
   font-family: "Raleway-Regular400";
   src: url("/assets/fonts/Raleway/static/Raleway-Regular.ttf");
 }
+
 @font-face {
   font-family: "Raleway-Medium500";
   src: url("/assets/fonts/Raleway/static/Raleway-Medium.ttf");
 }
+
 @font-face {
   font-family: "Respondent-Black";
   src: url("/assets/fonts/RespondentBlack.otf");
@@ -22,6 +24,7 @@
   --hg-gold-2: #756713;
   --green: #1da058;
   --blue-dark: #090f1b;
+  --bright-turquoise: #32e6e2;
 }
 
 /* All */
@@ -31,28 +34,12 @@
   box-sizing: border-box;
 }
 
-/* Query All */
-@media (max-width: 768px) {
-  * {
-    font-size: 13px;
-  }
-
-  .subtitle-oil {
-    font-size: 34px;
-  }
-
-  .subtitle-slate {
-    font-size: 34px;
-  }
-}
-
-/* ---------- */
-
 /* MyClases */
-body {
+body,
+html {
   margin: 0;
   font-family: "Raleway-Regular400", "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.03em;
   font-weight: 500;
@@ -127,48 +114,53 @@ body {
 /* ---------- */
 
 /* Loader */
-.centrado{
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--dark-oil);
-    z-index: 9999;
+.centrado {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-oil);
+  z-index: 9999;
 }
+
 .lds-hourglass {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
+
 .lds-hourglass:after {
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    margin: 8px;
-    box-sizing: border-box;
-    border: 32px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-hourglass 1.2s infinite;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
 }
+
 @keyframes lds-hourglass {
-    0% {
-        transform: rotate(0);
-        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-    50% {
-        transform: rotate(900deg);
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    100% {
-        transform: rotate(1800deg);
-    }
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: rotate(1800deg);
+  }
 }
 
 .disppear {
@@ -186,31 +178,41 @@ body {
 
 /* Navbar */
 .nav-pc {
-  background-color: transparent;
-  position: relative;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  /* z-index: 3; */
+  height: 4.25rem;
+  background-color: var(--oil);
+  /* position: relative; */
+  /* transition: background-color 0.3s ease, transform 0.3s ease; */
+  /* z-index: 9999; */
 }
+
 .nav-pc .navy-flex {
-  display: flex;
+  /*   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 68px;
+  justify-content: space-between; */
+  /* min-height: 68px; */
 }
+
 .nav-pc .nav-links {
-  display: flex;
-  padding: 0;
+  /* display: flex; */
+  /* padding: 0; */
 }
+
 .nav-pc .nav-links li {
-  padding: 0 40px;
   list-style-type: none;
 }
+
 .nav-pc .nav-links a {
   font-size: 85%;
   padding: 0 15px;
   text-decoration: none;
   color: var(--lightest-slate);
   font-weight: bold;
+}
+
+.logo {
+  /* margin: 10px; */
+  text-decoration: none;
+  /* color: inherit; */
 }
 
 /* Navbar sticky desde ABOUT */
@@ -220,10 +222,14 @@ body {
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  transform: translateY(0);
-  opacity: 1;
+  /* transform: translateY(0); */
+  /* opacity: 1; */
 }
 
+.slate-bb {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* Hamburguer mobile */
 .ham {
   display: none;
   cursor: pointer;
@@ -232,6 +238,7 @@ body {
   padding: 0;
   background-color: transparent;
 }
+
 .ham span {
   display: block;
   background-color: #f3f3f3;
@@ -241,94 +248,6 @@ body {
   border-radius: 2px;
 }
 
-.slate-bb {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-};
-
-/* ---------- */
-
-/* Nav Responsive */
-body.menu-open {
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .lang {
-    display: none;
-  }
-
-  .logo {
-    margin-top: 10px;
-  }
-
-  .ham {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    top: 21px;
-    right: 25px;
-    transition: 0.2s 0.1s;
-  }
-
-  .nav-pc {
-    background-color: transparent;
-  }
-
-  .navy-flex {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-
-  .nav-links {
-  background-color: var(--lightest-slate);
-  position: absolute;
-
-  top: 69px;
-  left: 0;
-  width: 40%; /* puedes ajustar */
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  height: 180px;
-  padding: 20px 0;
-
-  transform: translateX(-100%);
-  opacity: 0;
-
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-  /* .nav-links {
-    background-color: var(--lightest-slate);
-    position: absolute;
-    display: none !important;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 100px;
-    height: 21vh;
-    margin-top: 71px;
-    margin-left: -20px;
-    padding-bottom: 18px !important;
-    width: 54%;
-    opacity: 0;
-    border-bottom: 0.1rem solid var(--lightest-slate);
-  } */
-  .nav-links a {
-    color: var(--oil) !important;
-  }
-}
-@keyframes showMenu {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .nav-links.activate {
   transform: translateX(0);
   opacity: 1;
@@ -346,9 +265,83 @@ body.menu-open {
   transform: rotate(45deg) translate(-5px, -5px);
 }
 
-.ham.girar:hover {
+.ham.girar {
   transform: rotate(360deg);
 }
+
+/* ---------- */
+
+/* Nav Responsive */
+body.menu-open {
+  overflow: hidden;
+}
+
+.hide-name {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-pc .hg-title {
+    font-size: 23px;
+    /* text-decoration: none; */
+  }
+
+  .lang {
+    display: none;
+  }
+
+  .hide-name {
+    display: flex;
+  }
+
+  .ham {
+    display: block;
+    cursor: pointer;
+    /*   position: absolute; */
+    /*  top: 21px;
+    right: 25px; */
+    transition: 0.2s 0.1s;
+  }
+
+  .nav-links {
+    background-color: var(--lightest-slate);
+    position: absolute;
+
+    top: 69px;
+    left: 0;
+    width: 40%;
+    /* puedes ajustar */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 180px;
+    padding: 20px 0;
+
+    transform: translateX(-100%);
+    opacity: 0;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-pc .nav-links a {
+    color: var(--oil);
+  }
+}
+
+@keyframes showMenu {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 /* ---------- */
 
 /* Components */
@@ -372,6 +365,7 @@ body.menu-open {
   background-color: var(--lightest-oil);
   color: white;
 }
+
 /* ---------- */
 
 
@@ -404,13 +398,13 @@ body.menu-open {
 }
 
 
-/* .hidden {
+.hidden {
   display: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-} */
- 
+}
+
 /* ---------- */
 
 /* Home */
@@ -437,21 +431,6 @@ body.menu-open {
 .sub {
   font-style: italic;
 }
-/* ---------- */
-
-/* All site media querys adjusts */
-@media (max-width: 768px) {
-
-  /* .bg-truck {
-    margin-top: 0px;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px), url(/assets/img/carretera-mobile.jpg);
-    background-attachment: unset;
-  }
-
-  .r-title {
-    font-size: 50px;
-  } */
-} 
 
 .padding-about {
   padding: 150px 0;
@@ -470,17 +449,10 @@ body.menu-open {
   text-align: center;
 }
 
-/* rtl:begin:ignore */
 .marketing .col-lg-3 p {
   margin-right: 0.75rem;
   margin-left: 0.75rem;
 }
-
-/* .bg-contact {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px), url(/assets/img/cargo-compass.png);
-  background-size: cover;
-  background-position: 70%;
-} */
 
 .bg-contact {
   /* min-height: 400px; */
@@ -492,6 +464,28 @@ body.menu-open {
 }
 
 /* ---------- */
+
+/* All site media querys adjusts */
+@media (max-width: 768px) {
+  * {
+    font-size: 13px;
+  }
+
+  .subtitle-oil {
+    font-size: 34px;
+  }
+
+  .subtitle-slate {
+    font-size: 34px;
+  }
+}
+
+/* ---------- */
+
+
+
+
+
 
 
 
