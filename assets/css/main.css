@@ -9,10 +9,34 @@
   src: url("/assets/fonts/Raleway/static/Raleway-Medium.ttf");
 }
 
+/* title hg */
 @font-face {
   font-family: "Respondent-Black";
-  src: url("/assets/fonts/RespondentBlack.otf");
+  src: url("/assets/fonts/RespondentBlack.ttf");
 }
+
+/* titles */
+@font-face {
+  font-family: "Syncopate-Bold";
+  src: url("/assets/fonts/Syncopate-Bold.ttf");
+}
+
+@font-face {
+  font-family: "RedHatDisplay-Light";
+  src: url("/assets/fonts/RedHatDisplay-Light.ttf");
+}
+
+@font-face {
+  font-family: "RedHatDisplay-Regular";
+  src: url("/assets/fonts/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-family: "RedHatDisplay-Bold";
+  src: url("/assets/fonts/RedHatDisplay-Bold.ttf");
+}
+
+
 
 /* Variable Colors #091018 color oscuro nav */
 :root {
@@ -34,17 +58,33 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* MyClases */
-body,
 html {
-  margin: 0;
-  font-family: "Raleway-Regular400", "Avenir", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 20px;
+}
+
+body {
+  font-family: "RedHatDisplay-Regular", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   letter-spacing: 0.03em;
-  font-weight: 500;
+  font-weight: 400;
+  color: var(--lightest-slate);
+}
+
+
+/* MyClases */
+.title-section {
+  font-family: "RedHatDisplay-Bold", Helvetica, Arial, Lucida, sans-serif;
+}
+
+.hg-title {
+  font-family: "Respondent-Black", sans-serif;
+  font-weight: 900;
+  font-size: 73px;
+  text-shadow: var(--text-title-shadow);
   color: var(--lightest-slate);
 }
 
@@ -102,7 +142,7 @@ html {
   background-color: var(--oil);
 }
 
-header .bg-lightest-slate {
+.bg-lightest-slate {
   background-color: var(--lightest-slate);
 }
 
@@ -185,9 +225,12 @@ header .bg-lightest-slate {
 
 /* Navbar */
 .nav-pc {
+  position: relative; /* debe tener position para el z-index */
   height: 68px;
   background-color: var(--dark);
   z-index: 2;
+
+  transition: transform 0.4s ease, background-color 0.3s ease;
 }
 
 .nav-pc .nav-links li {
@@ -211,11 +254,24 @@ header .bg-lightest-slate {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+
+  transform: translateY(0);
+  animation: slideDown 0.4s ease;
 }
 
-
+.nav-exit {
+  transform: translateY(-100%);
+}
+/* nav in animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
 /* Hamburguer mobile */
 .ham {
@@ -280,7 +336,10 @@ body.menu-open {
 
   .nav-pc .hg-title {
     font-size: 1.5rem;
-    text-shadow: 0px 1px 1px #000000;
+    /* text-shadow: 0px 1px 1px #000000; */
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.6),
+      0 1px 2px rgba(0, 0, 0, 0.8);
     /* text-decoration: none; */
   }
 
@@ -340,91 +399,164 @@ body.menu-open {
 
 /* Components */
 /* General button */
+
 .button {
-  color: var(--lightest-slate);
-  background-color: var(--green);
-  /* border: 1px solid var(--lightest-slate); */
-  padding: 9px 14px;
+  border: none;
+  padding: 9px 1.5rem;
+  margin: 4px 2px;
+  color: var(--blue-dark);
+  background-color: var(--bright-turquoise);
+  font-family: "RedHatDisplay-Bold", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
   display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
+ /*  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s; */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
+  border-radius: 50px;
 }
 
 .button:hover {
-  background-color: var(--lightest-oil);
-  color: white;
+/*   background-color: var(--blue-dark);
+  color: var(--lightest-slate); */
+  transform: scale(1.05);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ---------- */
-
-
-/* button_up */
-.btn-up {
-  /* display: none; */
+/* button top */
+.button--top { /* metodo para heredar a traves de html */
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 10px;
   z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: var(--green);
-  color: var(--lightest-slate);
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
+  padding: 9px 14px;
 }
 
-#buttonUp {
+.button img {
+  width: 25px;
+}
+
+/* button_up */
+/* .btn-up {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  margin: 4px 2px;
+  color: var(--blue-dark);
+  background-color: var(--bright-turquoise);
+  font-family: "RedHatDisplay-Bold", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 25px;
+} */
+
+/* #buttonUp {
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 0.3s ease 0.1s;
+  transform: translateX(0);
+
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
 #buttonUp.hidden {
   opacity: 0;
   pointer-events: none;
+
+  transform: translateX(100%);
+} */
+
+#buttonUp {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+
+  transform: translateX(120%); /* 🔥 SIEMPRE fuera */
+  opacity: 0;
+
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
+/* ESTADO VISIBLE */
+#buttonUp.show {
+  transform: translateX(0);
+  opacity: 1;
+}
 
-.hidden {
+/* .hidden {
   display: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-}
+} */
 
 /* ---------- */
 
 /* Home */
-.bg-truck {
-  /* width: 100%;
+/* .bg-truck { */
+/* width: 100%;
   height: 100vh; */
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px), url(/assets/img/home-overlay.png);
+/*   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px), url(/assets/img/overlay.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #090f1b;
   z-index: -9px;
+} */
+
+.bg-truck {
+  position: relative;
+  /*  min-height: 100vh; */
+  overflow: hidden;
 }
 
-.hg-title {
-  font-family: "Respondent-Black", sans-serif;
-  font-weight: 900;
-  font-size: 73px;
-  color: rgb(233, 234, 235);
-  text-shadow: var(--text-title-shadow);
-  color: var(--lightest-slate);
+.bg-truck::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/assets/img/overlay.jpg) center/cover no-repeat;
+  
+  /* 🔥 AQUÍ haces todo el look */
+
+  filter:
+    blur(2.5px)
+    brightness(1)
+    saturate(0.7)
+    contrast(1.1);
+
+  transform: scale(1.05);
+  /* evita bordes blancos */
+  z-index: -2;
+
+  /* parallax effect */
+  transform: translateY(var(--parallax, 0)) scale(1.05);
 }
 
-.sub {
-  font-style: italic;
+.bg-truck::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(180deg,
+      rgba(5, 10, 25, 0.85) 0%,
+      rgba(5, 10, 25, 0.6) 40%,
+      rgba(5, 10, 25, 0.4) 70%,
+      rgba(5, 10, 25, 0.2) 100%);
+
+  z-index: -1;
 }
+
+
+
+
+
 
 .padding-about {
   padding: 150px 0;
@@ -462,7 +594,7 @@ body.menu-open {
 /* All site media querys adjusts */
 @media (max-width: 768px) {
   * {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .subtitle-oil {

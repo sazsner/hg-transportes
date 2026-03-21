@@ -22,6 +22,16 @@
 
 // console.log(navbar, about)
 
+//Parallax effect
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const bg = document.querySelector('.bg-truck');
+
+  bg.style.setProperty('--parallax', scrolled * 0.3 + 'px');
+});
+
+
+//navscroll
 const navbar = document.getElementById("navbar");
 const about = document.getElementById("about");
 
@@ -38,6 +48,11 @@ function navScroll() {
     navbar.classList.remove('bg-secondary');
   }
 }
+
+
+
+
+
 
 /* const navbar = document.getElementById("navbar");
 const about = document.getElementById("about");

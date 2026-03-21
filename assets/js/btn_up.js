@@ -11,9 +11,9 @@ function scrollFunction() {
     document.documentElement.scrollTop || document.body.scrollTop;
 
   if (scrollTop >= aboutSection.offsetTop) {
-    buttonUp.classList.remove("hidden");
+    buttonUp.classList.add("show");
   } else {
-    buttonUp.classList.add("hidden");
+    buttonUp.classList.remove("show");
   }
 }
 
