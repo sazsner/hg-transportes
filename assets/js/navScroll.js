@@ -18,9 +18,9 @@ function navScroll() {
 
   if (scrollTop >= about.offsetTop) {
     navbar.classList.add('show-nav');
-    navbar.classList.add('bg-secondary');
+    /* navbar.classList.add('bg-secondary'); */
   } else {
     navbar.classList.remove('show-nav');
-    navbar.classList.remove('bg-secondary');
+    /* navbar.classList.remove('bg-secondary'); */
   }
 }
