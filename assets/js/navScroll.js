@@ -8,7 +8,7 @@
  */
 
 //navscroll
-const navbar = document.getElementById("navbar");
+/* const navbar = document.getElementById("navbar");
 const about = document.getElementById("about");
 
 window.addEventListener("scroll", navScroll);
@@ -18,9 +18,9 @@ function navScroll() {
 
   if (scrollTop >= about.offsetTop) {
     navbar.classList.add('show-nav');
-    /* navbar.classList.add('bg-secondary'); */
+    navbar.classList.add('bg-secondary');
   } else {
     navbar.classList.remove('show-nav');
-    /* navbar.classList.remove('bg-secondary'); */
+    navbar.classList.remove('bg-secondary');
   }
-}
+} */

@@ -58,21 +58,34 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   font-size: 16px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  position: relative;
+  height: 100%;
   font-family: "RedHatDisplay-Regular", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   letter-spacing: 0.03em;
   font-weight: 400;
+  text-shadow:
+  0 1px 2px rgba(0, 0, 0, 0.15),
+  0 2px 6px rgba(0, 0, 0, 0.10);
   color: var(--lightest-slate);
+  background-color: var(--blue-dark);
 }
+/* nav shadow off */
+nav li a {
+  text-shadow: none;
+}
+
 /* -------- */
 
 /* MyClases */
@@ -124,14 +137,12 @@ body {
 }
 
 .button:hover {
-/*   background-color: var(--blue-dark);
-  color: var(--lightest-slate); */
   transform: scale(1.05);
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 /* button top */
-.button--top { /* metodo para heredar a traves de html */
+.button--top { /* metodo para heredar propiedades del boton base a traves de html */
   position: fixed;
   bottom: 20px;
   right: 10px;  
@@ -163,8 +174,16 @@ body {
 
 /* --------- */
 
-.p-tb {
-  padding: 150px 0;
+.ptb-h {
+  padding: 200px 0;
+}
+
+.ptb-about-top {
+  padding: 90px 0;
+}
+
+.ptb-about-bottom {
+  padding: 160px 0;
 }
 
 .subtitle-oil {
@@ -224,7 +243,7 @@ body {
 }
 
 .slate-bb {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid #f5f5f596;
 }
 
 /* ---------- */
@@ -295,12 +314,13 @@ body {
 
 /* Navbar */
 .nav-pc {
-  position: relative; /* debe tener position para el z-index */
+  position: fixed; /* debe tener position para el z-index / relative para animar*/
+  width: 100%;
   height: 68px;
-  background-color: var(--dark);
+  background-color: var(--blue-dark);
   z-index: 2;
 
-  transition: transform 0.4s ease, background-color 0.3s ease;
+  /* transition: transform 0.4s ease, background-color 0.3s ease; */
 }
 
 .nav-pc .nav-links li {
@@ -319,8 +339,8 @@ body {
   text-decoration: none;
 }
 
-/* Navbar sticky desde ABOUT */
-.show-nav {
+/* Navbar sticky desde ABOUT para js */
+/* .show-nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -328,20 +348,21 @@ body {
 
   transform: translateY(0);
   animation: slideDown 0.4s ease;
-}
+} */
 
-.nav-exit {
+/* .nav-exit {
   transform: translateY(-100%);
-}
+} */
+
 /* nav in animation */
-@keyframes slideDown {
+/* @keyframes slideDown {
   from {
     transform: translateY(-100%);
   }
   to {
     transform: translateY(0);
   }
-}
+} */
 
 /* Hamburguer mobile */
 .ham {
@@ -392,11 +413,6 @@ body.menu-open {
 
 @media (max-width: 768px) {
 
-  .main {
-    margin-top: -60px;
-    z-index: -1;
-  }
-
   .nav-pc {
     height: 60px;
   }
@@ -435,7 +451,6 @@ body.menu-open {
 
     transform: translateX(-100%);
     opacity: 0;
-
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
@@ -444,7 +459,7 @@ body.menu-open {
   }
 }
 
-@keyframes showMenu {
+/* @keyframes showMenu {
   from {
     opacity: 0;
   }
@@ -452,36 +467,32 @@ body.menu-open {
   to {
     opacity: 1;
   }
-}
+} */
 /* ---------- */
 
 
 /* Home */
 .bg-truck {
   position: relative;
-   min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
 }
 
 .bg-truck::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0px;
   background: url(/assets/img/overlay.jpg) center/cover no-repeat;
   
-  /* modified */
+  
   filter:
-    blur(2.5px)
+    blur(1px)
     brightness(1)
     saturate(0.7)
     contrast(1.1);
 
-  transform: scale(1.05);
-  /* evita bordes blancos */
   z-index: -2;
-
-  /* parallax effect */
-  /* transform: translateY(var(--parallax, 0)) scale(1.05); */
 }
 
 .bg-truck::after {
@@ -502,61 +513,48 @@ body.menu-open {
 /* About */
 .about-top {
   position: relative;
-  min-height: 40vh;
+  width: 100%;
+  min-height: 30vh;
+  min-height: 30svh;
   background-color: #192430;
   z-index: -1;
+  /* overflow: hidden; */
 }
-
-/* fade */
-/* .about-top::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -200px;
-  height: 200px;
-
-  background: linear-gradient(to bottom,
-        rgba(25, 36, 48, 1) 0%,
-        rgba(25, 36, 48, 0) 100%);
-  pointer-events: none;
-} */
-
-
 
 .about-bottom {
   position: relative;
-  min-height: 60vh;
-   overflow: hidden;
+  width: 100%;
+  min-height: 70vh;
+  min-height: 70svh;
+  overflow: hidden;
 }
 
 .about-bottom::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0px;
 
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('/assets/img/containers.png');
+    linear-gradient(rgb(30 29 29 / 70%), rgb(28 29 35 / 100%)), url(/assets/img/containers.png);
   background-size: cover;
   background-position: center;
   
   filter:
-    blur(1px)
+    blur(0px)
     brightness(1)
-    saturate(0.7)
+    saturate(1.2)
     contrast(1.1);
-
-  transform: scale(1.05);
 
   z-index: -3;
 }
 
 /* MOBILE: logo como fondo */
 @media (max-width: 767px) {
+
   .about-top {
     position: relative;
     z-index: 1;
+    overflow: hidden;
   }
 
   .about-top::before {
@@ -573,12 +571,6 @@ body.menu-open {
 }
 
 
-/* @media (max-width: 768px) {
-  .about-top,
-  .about-bottom {
-    min-height: auto;
-  }
-} */
 
 
 .padding-about {
@@ -616,9 +608,6 @@ body.menu-open {
 
 /* All site media querys adjusts */
 @media (max-width: 768px) {
-  * {
-    font-size: 0.8125rem;
-  }
 
   .subtitle-oil {
     font-size: 34px;
@@ -627,6 +616,7 @@ body.menu-open {
   .subtitle-slate {
     font-size: 34px;
   }
+  
 }
 
 /* ---------- */
