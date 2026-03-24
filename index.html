@@ -6,7 +6,8 @@
 
   <title>HG Transportes</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
 
 
   <!-- SEO -->
@@ -46,7 +47,7 @@
   <header id="navbar" class="nav-pc navy-shadow">
 
     <nav class="container">
-      <div class="row align-items-bottom">
+      <div class="row">
 
         <!-- LOGO -->
         <h1 class="col-8 col-md-2 d-flex align-items-center">
@@ -82,21 +83,26 @@
   <!-- --------- -->
 
   <!-- MAIN -->
-  <main>
+  <main class="">
     <!-- HOME SECTION -->
     <section id="index" class="d-flex align-items-center bg-truck slate-bb">
       <div class="container mb-5">
         <div class="row justify-content-center">
           <div class="col-11 col-md-7 mb-5 pb-4">
-            <h2 class="display-6 text-center mb-3">Nuestro propósito es ser un aliado estratégico dentro de su logística</h2>
+            <h2 class="display-6 text-center mb-3">Nuestro propósito es ser un aliado estratégico dentro de su logística
+            </h2>
             <p class="pb-3 text-center">"Nuestro compromiso es la calidad de servicio"</p>
-            <p class="text-center">El objetivo de nuestra empresa es brindar apoyo importante para el cliente en la cadena logística de sus cargas adaptándonos a las necesidades de este.</p>
+            <p class="text-center">El objetivo de nuestra empresa es brindar apoyo importante para el cliente en la
+              cadena logística de sus cargas adaptándonos a las necesidades de este.</p>
           </div>
           <!-- Button -->
-          <div class="d-flex justify justify-content-center col-md-12 py-2">
-            <button type="button" role="link" onclick="window.location='#services'"
-              class="button rounded-5 navy-shadow">Nuestros Servicios</button>
+          <div class="d-flex justify-content-center col-md-12 py-2">
+            <!-- Usamos <a> para que el navegador reconozca el anclaje #services -->
+            <a href="#services" class="rounded-5 shadow button text-decoration-none">
+              Nuestros Servicios
+            </a>
           </div>
+
         </div>
       </div>
     </section>
@@ -129,13 +135,13 @@
                 nacional, tanto como cargas LCL, FCL, desconsolidados entre otros.<br><br>
                 Estamos en permanente seguimiento de sus cargas y coordinara directamente con nosotros. Los camiones
                 cuentan con GPS y seguro de carga, brindando a nuestros clientes la tranquilidad de que sus cargas se
-                encuentran en buenas manos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore obcaecati 
+                encuentran en buenas manos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore obcaecati
               </p>
             </div>
           </div>
         </div>
       </div>
-       <!-- line -->
+      <!-- line -->
       <div class="mx-auto" style="height:1px; width:80%; background:rgb(102, 10, 10);"></div>
     </section>
     <!-- END ABOUT SECTION -->
@@ -143,75 +149,91 @@
 
 
     <!-- SERVICES SECTION -->
-    <div class="p-tb bg-oil" id="services">
-      <div class="container-fluid d-flex justify-content-center animado">
-        <div class="row container">
+    <section class="pb-5" id="services">
+      <div class="container">
+        <div class="row flex-column justify-content-end align-items-center hg-services">
           <!-- TITULO -->
-          <div class="col-sm-12 p-md-5 text-center hg-bg2 hg-slate-text-color scrollReveal">
-            <h2 class="subtitle-slate pb-3 title-section">Nuestros Servicios</h2>
-            <p class=""><i>Lorem ipsum, lorem</i></p>
+          <div class="col-11 col-md-8 text-center" id="scrollReveal">
+            <h2 class="subtitle">NUESTROS</h2>
+            <h4 class="display-7 pb-4">SERVICIOS</h4>
             <p class="py-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, earum, ex suscipit
-              consequuntur labore maiores eius sit fugit esse vitae aperiam deserunt necessitatibus iusto ducimus at,
-              eum fugiat est iure?</p>
+              consequuntur labore maiores eius sit fugit esse vitae aperiam.</p>
           </div>
-          <!-- SECTION -->
-
+          <div class="mx-auto" style="height:1px; width:80%; background:rgb(102, 10, 10);"></div>
         </div>
       </div>
-    
       <!-- CARDS -->
-      <div class="container marketing scrollReveal">
-        <div class="row d-flex justify-content-center mb-5 pb-5" style="z-index: 99">
-          <div class="bg-oil rounded-3 col-lg-3 my-5 py-5 mx-3 shadow">
-            <svg class="bd-placeholder-img rounded-circle mb-3" width="140" height="140"
-              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-              preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      <div class="container pb-5">
+        <div class="row justify-content-center align-items-center">
+          <!-- card 1 -->
+          <div
+            class="green flex-column col-11 col-lg-3 p-4 text-center rounded-3 shadow h-100 border border-secondary bg-oil green">
+
+            <svg class="bd-placeholder-img rounded-circle d-block mx-auto mb-4" width="140" height="140"
+              xmlns="http://www.w3.org" role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#777" />
             </svg>
 
             <h3 class="mb-3">Contenedores</h3>
             <p>Some representative placeholder content for the three columns of text below the carousel. This is the
               first column.</p>
-            <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
-          </div><!-- /.col-lg-4 -->
-          <div class="bg-oil rounded-3 col-lg-3 my-5 py-5 mx-3 shadow">
-            <svg class="bd-placeholder-img rounded-circle mb-3" width="140" height="140"
-              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-              preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+
+            <div class="pt-3 mt-auto">
+              <a href="#services" class="rounded-5 shadow button text-decoration-none d-inline-block">
+                Mas información
+              </a>
+            </div>
+          </div>
+
+          <!-- card 2 -->
+          <div
+            class="green flex-column col-11 col-lg-3 p-4 my-4 mx-md-4 mb-md3 text-center rounded-3 shadow h-100 border border-secondary bg-oil green">
+
+            <svg class="bd-placeholder-img rounded-circle d-block mx-auto mb-4" width="140" height="140"
+              xmlns="http://www.w3.org" role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#777" />
             </svg>
 
-            <h3 class="mb-3">Desconsolidado</h3>
-            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
-              column.</p>
-            <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
-          </div><!-- /.col-lg-4 -->
+            <h3 class="mb-3">Contenedores</h3>
+            <p>Some representative placeholder content for the three columns of text below the carousel. This is the
+              first column.</p>
 
-          <div class="bg-oil rounded-3 col-lg-3 my-5 py-5 mx-3 shadow">
-            <svg class="bd-placeholder-img rounded-circle mb-3" width="140" height="140"
-              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-              preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            <div class="pt-3 mt-auto">
+              <a href="#services" class="rounded-5 shadow button text-decoration-none d-inline-block">
+                Mas información
+              </a>
+            </div>
+          </div>
+
+          <!-- card 3 -->
+          <div
+            class="green flex-column col-11 col-lg-3 p-4 text-center rounded-3 shadow h-100 border border-secondary bg-oil green">
+
+            <svg class="bd-placeholder-img rounded-circle d-block mx-auto mb-4" width="140" height="140"
+              xmlns="http://www.w3.org" role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#777" />
             </svg>
 
-            <h3 class="mb-3">Almacenaje</h3>
-            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
-              column.</p>
-            <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
-          </div><!-- /.col-lg-4 -->
+            <h3 class="mb-3">Contenedores</h3>
+            <p>Some representative placeholder content for the three columns of text below the carousel. This is the
+              first column.</p>
 
-        </div><!-- /.col-lg-4 -->
+            <div class="pt-3 mt-auto">
+              <a href="#services" class="rounded-5 shadow button text-decoration-none d-inline-block">
+                Mas información
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-    </div>
+    </section>
     <!-- END SERVICE SECTION -->
 
 
     <!-- FORM SECTION -->
-    <section class="d-flex align-items-center justify-content-center scrollReveal" id="form">
+    <section class="d-flex align-items-center justify-content-center vh-100 bg-lightest-slate" id="form">
 
       <div class="container py-5">
 
@@ -245,7 +267,7 @@
                   <textarea rows="3" class="form-control" id="mensaje" name="mensaje"></textarea>
                 </div>
               </div>
-              <button type="submit" class="button rounded-5">Enviar</button>
+              <button type="submit" class="rounded-5 button shadow">Enviar</button>
             </form>
 
           </div>
@@ -336,7 +358,7 @@
   <script type="module" src="/assets/js/ham.js"></script>
   <!-- <script type="module" src="/assets/js/navScroll.js"></script> -->
 
-<!--   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  <!--   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
 

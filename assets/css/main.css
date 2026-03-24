@@ -117,6 +117,7 @@ nav li a {
 
 /* General button */
 .button {
+  display: inline-block;
   border: none;
   padding: 9px 1.5rem;
   margin: 4px 2px;
@@ -173,18 +174,6 @@ nav li a {
 }
 
 /* --------- */
-
-.ptb-h {
-  padding: 200px 0;
-}
-
-.ptb-about-top {
-  padding: 90px 0;
-}
-
-.ptb-about-bottom {
-  padding: 160px 0;
-}
 
 .subtitle-oil {
   font-size: 50px;
@@ -569,17 +558,17 @@ body.menu-open {
     z-index: -1;
   }
 }
+/* ------ */
 
-
-
-
-.padding-about {
-  padding: 150px 0;
+/* Nuestros servicios */
+.hg-services {
+  min-height: 360px;
 }
 
-.card-title {
-  font-size: 16px;
-}
+/* ------ */
+
+
+
 
 .marketing {
   z-index: 9999;
