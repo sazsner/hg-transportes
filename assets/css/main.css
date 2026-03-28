@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: "RedHatDisplay-Regular";
-  src: url("/assets/fonts/Raleway-Regular.ttf");
+  src: url("/assets/fonts/RedHatDisplay-Regular.ttf");
 }
 
 @font-face {
@@ -37,18 +37,20 @@
 }
 
 
-
+.prueba{
+  background-color: #111827;
+}
 /* Variable Colors #091018 color oscuro nav */
 :root {
   --dark: #091018;
   --dark-oil: #192430;
   --oil: #192430;
-  --lightest-oil: #2c3e50;
+  --blue-dark: #090f1b;
+  --lightest-oil: #243447;
   --lightest-slate: #f5f5f5;
   --hg-gold: #FFED69;
   --hg-gold-2: #756713;
   --green: #1da058;
-  --blue-dark: #090f1b;
   --bright-turquoise: #32e6e2;
   --text-title-shadow: 2px 2px 4px #000000;
 }
@@ -97,16 +99,21 @@ nav li a {
   text-shadow: var(--text-title-shadow);
   color: var(--lightest-slate);
 }
-
-.subtitle {
+.hg-subtitle {
   font-family: "RedHatDisplay-Bold", Helvetica, Arial, Lucida, sans-serif;
   font-size: 3.5rem;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.main {
-  margin-top: -68px;
-  z-index: -1;
+.hg-subtitle--dark {
+  color: var(--dark-oil);
+  /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3960784314); */
+}
+
+.hg-text-dark {
+  font-family: "RedHatDisplay-Regular", Helvetica, Arial, sans-serif;
+  color: var(--blue-dark);
+  /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); */
 }
 
 .scrollReveal {
@@ -175,11 +182,7 @@ nav li a {
 
 /* --------- */
 
-.subtitle-oil {
-  font-size: 50px;
-  color: var(--dark-oil);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3960784314);
-}
+
 
 .subtitle-slate {
   font-size: 50px;
@@ -199,6 +202,9 @@ nav li a {
   color: var(--lightest-oil);
 }
 
+.bg-blue-dark {
+  background-color: var(--blue-dark);
+}
 .oil-txt {
   color: var(--oil);
 }
@@ -307,7 +313,7 @@ nav li a {
   width: 100%;
   height: 68px;
   background-color: var(--blue-dark);
-  z-index: 2;
+  z-index: 4;
 
   /* transition: transform 0.4s ease, background-color 0.3s ease; */
 }
@@ -427,7 +433,9 @@ body.menu-open {
 
     top: 60px;
     left: 0;
-    width: 40%;
+    width: 45%;
+    height: 220px;
+    padding: 25px 0;
     /* puedes ajustar */
 
     display: flex;
@@ -435,8 +443,7 @@ body.menu-open {
     justify-content: space-around;
     align-items: center;
 
-    height: 180px;
-    padding: 20px 0;
+   
 
     transform: translateX(-100%);
     opacity: 0;
@@ -505,9 +512,7 @@ body.menu-open {
   width: 100%;
   min-height: 30vh;
   min-height: 30svh;
-  background-color: #192430;
-  z-index: -1;
-  /* overflow: hidden; */
+  background: rgba(5, 10, 25, 0.85) 100%;
 }
 
 .about-bottom {
@@ -517,21 +522,25 @@ body.menu-open {
   min-height: 70svh;
   overflow: hidden;
 }
-
+/*  --blue-dark: #090f1b; */
 .about-bottom::before {
   content: "";
   position: absolute;
   inset: 0px;
-
+ 
   background: 
-    linear-gradient(rgb(30 29 29 / 70%), rgb(28 29 35 / 100%)), url(/assets/img/containers.png);
-  background-size: cover;
-  background-position: center;
+    linear-gradient(180deg,
+      rgba(5, 10, 25, 0.4) 0%,
+      rgba(5, 10, 25, 0.6) 40%,
+      rgba(5, 10, 25, 0.4) 70%,
+      rgba(5, 10, 25, 1) 100%), /* Terminamos en sólido para conectar con lo que sigue */
+  url(/assets/img/containers.png) center/cover no-repeat;
+
   
   filter:
-    blur(0px)
-    brightness(1)
-    saturate(1.2)
+    blur(0.5px)
+    brightness(0.9)
+    saturate(0.8)
     contrast(1.1);
 
   z-index: -3;
@@ -551,7 +560,7 @@ body.menu-open {
     position: absolute;
     inset: 0;
 
-    background: url('/assets/img/logo-rounded.svg') no-repeat center;
+    background: url('/assets/img/logo-rounded.svg') center/cover no-repeat;
     background-size: 80%;
 
     opacity: 0.08;
@@ -565,46 +574,104 @@ body.menu-open {
   min-height: 360px;
 }
 
+.card-service {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.3s ease;
+  position: relative; /* Importante para el z-index */
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde base para que el hover funcione */
+}
+
+/* Estado Hover: EXPANSIÓN */
+.card-service:hover {
+  transform: scale(1.03); 
+
+  z-index: 1; 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+              0 0 15px rgba(50, 230, 226, 0.2);
+  border-color: var(--bright-turquoise);
+}
 /* ------ */
 
-
-
-
-.marketing {
-  z-index: 9999;
+/* CONTACT FORM */
+/* styles input focus */
+.custom-input:focus {
+  border-color: var(--bright-turquoise);
+  box-shadow: 0 0 0 0.25rem rgba(50, 230, 226, 0.25);
+  background-color: #fff;
+  outline: 0;
 }
 
-.marketing .col-lg-3 {
-  margin-bottom: 1.5rem;
-  text-align: center;
+.btn-form-submit {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  min-width: 150px;
 }
 
-.marketing .col-lg-3 p {
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
+.btn-form-submit:hover {
+  transform: scale(1.05);
+  color: var(--blue-dark);
+}
+
+.custom-input::placeholder {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
 .bg-contact {
-  /* min-height: 400px; */
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 360px),
-    url("../img/contact-image-truck.jpg");
-  background-size: cover;
-  background-position: center center;
+  display: block;
+  /* La mostramos (estaba d-none en móvil por clase de bootstrap) */
+  position: relative;
+  /* REQUISITO: Para que el degradado se pegue aquí */
 }
 
+/* Overlay */
+.bg-contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 7px;
+
+  background: linear-gradient(to bottom, rgb(44 47 51) 0%,
+      rgb(17 18 18 / 40%) 40%,
+      transparent 80%
+    );
+  pointer-events: none;
+}
+
+
+/* --- modible behavior (background cover) --- */
+.bg-contact-mobile {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-contact-mobile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('/assets/img/contact-image-truck.jpg') center/cover no-repeat; 
+  opacity: 0.08;
+  z-index: -1;
+}
+
+/* --- desktop behavior (side pic) --- */
+@media (min-width: 768px) {
+  /* Quitamos el fondo sutil en PC para que no se vea doble */
+  .bg-contact-mobile::before {
+    display: none;
+  }
+}
 /* ---------- */
 
 /* All site media querys adjusts */
 @media (max-width: 768px) {
 
-  .subtitle-oil {
-    font-size: 34px;
-  }
-
-  .subtitle-slate {
-    font-size: 34px;
-  }
   
 }
 
