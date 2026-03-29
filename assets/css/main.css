@@ -101,7 +101,7 @@ nav li a {
 }
 .hg-subtitle {
   font-family: "RedHatDisplay-Bold", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 3.5rem;
+  font-size: 300%;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
@@ -567,6 +567,7 @@ body.menu-open {
     z-index: -1;
   }
 }
+
 /* ------ */
 
 /* Nuestros servicios */
@@ -671,13 +672,94 @@ body.menu-open {
 /* FOOTER */
 
 
+.main {
+  padding-top: 57px;
+}
 
 
-/* All site media querys adjusts */
-@media (max-width: 768px) {
+
+
+
+
+/* PLANTILLAS STYLES */
+
+/* Container */
+.container-top {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  min-height: 30svh;
+  /* background: rgba(5, 10, 25, 0.85) 100%; */
+}
+
+.container-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('/assets/img/home2.jpg') center/cover no-repeat;
+  /* background-size: 80%; */
+
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.container-bottom {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  min-height: 70svh;
+  overflow: hidden;
+}
+/*  --blue-dark: #090f1b; */
+.container-bottom::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+ 
+  background: 
+    linear-gradient(180deg,
+      rgba(5, 10, 25, 0.4) 0%,
+      rgba(5, 10, 25, 0.6) 40%,
+      rgba(5, 10, 25, 0.4) 70%,
+      rgba(5, 10, 25, 1) 100%),
+  url(/assets/img/Container2.png) center/cover no-repeat;
 
   
+  filter:
+    blur(0.5px)
+    brightness(0.9)
+    saturate(0.8)
+    contrast(1.1);
+
+  z-index: -3;
 }
+
+/* MOBILE: logo como fondo */
+@media (max-width: 767px) {
+
+  .container-top {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  /* .container-top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('/assets/img/home2.jpg') center/cover no-repeat;
+    background-size: 80%;
+
+    opacity: 0.08;
+    z-index: -1;
+  } */
+}
+
+
+
+
 
 /* ---------- */
 
