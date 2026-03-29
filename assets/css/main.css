@@ -643,7 +643,6 @@ body.menu-open {
   pointer-events: none;
 }
 
-
 /* --- modible behavior (background cover) --- */
 .bg-contact-mobile {
   position: relative;
@@ -668,6 +667,11 @@ body.menu-open {
   }
 }
 /* ---------- */
+
+/* FOOTER */
+
+
+
 
 /* All site media querys adjusts */
 @media (max-width: 768px) {
