@@ -585,14 +585,14 @@ body.menu-open {
 }
 
 /* Estado Hover: EXPANSIÓN */
-.card-service:hover {
+/* .card-service:hover {
   transform: scale(1.03); 
 
   z-index: 1; 
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
               0 0 15px rgba(50, 230, 226, 0.2);
   border-color: var(--bright-turquoise);
-}
+} */
 /* ------ */
 
 /* CONTACT FORM */
@@ -711,8 +711,39 @@ body.menu-open {
   min-height: 70svh;
   overflow: hidden;
 }
+
+
+
+/* descons page */
+.descons-top {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  min-height: 30svh;
+  /* background: rgba(5, 10, 25, 0.85) 100%; */
+}
+
+.descons-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('/assets/img/descons-img.png') center/cover no-repeat;
+  /* background-size: 80%; */
+
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.descons-bottom {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  min-height: 70svh;
+  overflow: hidden;
+}
 /*  --blue-dark: #090f1b; */
-.container-bottom::before {
+.descons-bottom::before {
   content: "";
   position: absolute;
   inset: 0px;
@@ -734,29 +765,6 @@ body.menu-open {
 
   z-index: -3;
 }
-
-/* MOBILE: logo como fondo */
-@media (max-width: 767px) {
-
-  .container-top {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
-
-  /* .container-top::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: url('/assets/img/home2.jpg') center/cover no-repeat;
-    background-size: 80%;
-
-    opacity: 0.08;
-    z-index: -1;
-  } */
-}
-
 
 
 
