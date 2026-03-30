@@ -713,7 +713,6 @@ body.menu-open {
 }
 
 
-
 /* descons page */
 .descons-top {
   position: relative;
@@ -742,36 +741,38 @@ body.menu-open {
   min-height: 70svh;
   overflow: hidden;
 }
-/*  --blue-dark: #090f1b; */
-.descons-bottom::before {
-  content: "";
-  position: absolute;
-  inset: 0px;
- 
-  background: 
-    linear-gradient(180deg,
-      rgba(5, 10, 25, 0.4) 0%,
-      rgba(5, 10, 25, 0.6) 40%,
-      rgba(5, 10, 25, 0.4) 70%,
-      rgba(5, 10, 25, 1) 100%),
-  url(/assets/img/Container2.png) center/cover no-repeat;
-
-  
-  filter:
-    blur(0.5px)
-    brightness(0.9)
-    saturate(0.8)
-    contrast(1.1);
-
-  z-index: -3;
-}
-
-
 
 
 /* ---------- */
+/* LCL */
+.lcl-top {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  min-height: 30svh;
+  /* background: rgba(5, 10, 25, 0.85) 100%; */
+}
 
+.lcl-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  background: url('/assets/img/lcl-image.png') center/cover no-repeat;
+  /* background-size: 80%; */
+
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.lcl-bottom {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  min-height: 70svh;
+  overflow: hidden;
+}
+/* ------ */
 
 
 
