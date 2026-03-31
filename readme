@@ -6,6 +6,8 @@ git push
 
 hgtransporteswork.surge.sh
 
+surge . hgtransporteswork.surge.sh
+
 offset-md-1
 
 https://cstgrupo.com/blog/contenedores-maritimos/

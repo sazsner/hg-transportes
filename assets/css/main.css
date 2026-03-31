@@ -468,18 +468,18 @@ body.menu-open {
 
 
 /* Home */
-.bg-truck {
+.bg-home {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
 }
 
-.bg-truck::before {
+.bg-home::before {
   content: "";
   position: absolute;
   inset: 0px;
-  background: url(/assets/img/overlay.jpg) center/cover no-repeat;
+  background: url(/assets/img/home-img.webp) center/cover no-repeat;
   
   
   filter:
@@ -491,7 +491,7 @@ body.menu-open {
   z-index: -2;
 }
 
-.bg-truck::after {
+.bg-home::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -534,7 +534,7 @@ body.menu-open {
       rgba(5, 10, 25, 0.6) 40%,
       rgba(5, 10, 25, 0.4) 70%,
       rgba(5, 10, 25, 1) 100%), /* Terminamos en sólido para conectar con lo que sigue */
-  url(/assets/img/containers.png) center/cover no-repeat;
+  url(/assets/img/cont-img-about.webp) center/cover no-repeat;
 
   
   filter:
@@ -684,7 +684,7 @@ body.menu-open {
 /* PLANTILLAS STYLES */
 
 /* Container */
-.container-top {
+.cont-top {
   position: relative;
   width: 100%;
   min-height: 30vh;
@@ -692,19 +692,19 @@ body.menu-open {
   /* background: rgba(5, 10, 25, 0.85) 100%; */
 }
 
-.container-top::before {
+.cont-top::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  background: url('/assets/img/home2.jpg') center/cover no-repeat;
+  background: url('/assets/img/cont-img.webp') center/cover no-repeat;
   /* background-size: 80%; */
 
   opacity: 0.4;
   z-index: -1;
 }
 
-.container-bottom {
+.cont-bottom {
   position: relative;
   width: 100%;
   min-height: 70vh;
@@ -727,7 +727,7 @@ body.menu-open {
   position: absolute;
   inset: 0;
 
-  background: url('/assets/img/descons-img.png') center/cover no-repeat;
+  background: url('/assets/img/descons-img.webp') center/cover no-repeat;
   /* background-size: 80%; */
 
   opacity: 0.4;
@@ -758,7 +758,7 @@ body.menu-open {
   position: absolute;
   inset: 0;
 
-  background: url('/assets/img/lcl-image.png') center/cover no-repeat;
+  background: url('/assets/img/lcl-image.webp') center/cover no-repeat;
   /* background-size: 80%; */
 
   opacity: 0.4;
