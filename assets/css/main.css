@@ -245,6 +245,22 @@ nav li a {
 
 
 /* Loader */
+
+/* body.loading {
+  overflow: hidden;
+  height: 100vh;
+} */
+
+body.loading {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed; /* Esto es el "santo remedio" para iOS */
+
+  /* touch-action: none; */
+  -webkit-overflow-scrolling: none;
+}
+
 .centrado {
   height: 100vh;
   width: 100%;
@@ -261,6 +277,7 @@ nav li a {
 .lds-hourglass {
   display: inline-block;
   position: relative;
+  top: -60px;
   width: 80px;
   height: 80px;
 }
@@ -273,8 +290,8 @@ nav li a {
   height: 0;
   margin: 8px;
   box-sizing: border-box;
-  border: 32px solid #fff;
-  border-color: #fff transparent #fff transparent;
+  border: 32px solid var(--bright-turquoise);
+  border-color: var(--bright-turquoise) transparent var(--bright-turquoise) transparent;
   animation: lds-hourglass 1.2s infinite;
 }
 
@@ -655,7 +672,7 @@ body.menu-open {
   position: absolute;
   inset: 0;
 
-  background: url('/assets/img/contact-image-truck.jpg') center/cover no-repeat; 
+  background: url('/assets/img/contact-img-truck.webp') center/cover no-repeat; 
   opacity: 0.08;
   z-index: -1;
 }
