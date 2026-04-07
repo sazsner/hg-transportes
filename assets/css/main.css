@@ -791,7 +791,19 @@ body.menu-open {
 }
 /* ------ */
 
+/* Scroll reveal class add/remove JS */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px); /* Menos distancia = menos "tiritón" */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
 
+/* Clase que activa el JS */
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 
 
 
@@ -837,3 +849,4 @@ body.menu-open {
   border: 2px solid rgb(198, 243, 0);
 
 }
+
